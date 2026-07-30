@@ -1,3 +1,3 @@
-import { supabase } from '../supabaseClient.js';
+import { getCartCount } from '../api/cart.js';
 
-console.log('Supabase client ready');
+document.getElementById('cart-count').textContent = getCartCount();

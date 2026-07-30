@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FILI – Cart</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">FILI</a>
+    <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+
+  <section class="section cart-page">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary" class="cart-summary">
+      <span>Subtotal: <strong id="cart-subtotal">₦0</strong></span>
+      <button class="checkout-btn" disabled>Checkout — Coming Soon</button>
+    </div>
+  </section>
+
+  <script type="module" src="js/pages/cart.js"></script>
+</body>
+</html>
