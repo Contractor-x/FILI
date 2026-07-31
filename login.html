@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FILI – Login</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">FILI</a>
+    <div id="nav-auth-slot"></div>
+  </nav>
+
+  <section class="auth-page">
+    <h2>Login</h2>
+    <form id="login-form" class="auth-form">
+      <label for="email">Email</label>
+      <input type="email" id="email" required autocomplete="email" />
+      <label for="password">Password</label>
+      <input type="password" id="password" required autocomplete="current-password" />
+      <p id="error-message" class="error-message" hidden></p>
+      <button type="submit" class="auth-btn">Login</button>
+    </form>
+    <button id="google-login-btn" class="google-btn">Continue with Google</button>
+    <p class="auth-alt">Don't have an account? <a href="signup.html">Sign up</a></p>
+  </section>
+
+  <script type="module" src="js/pages/login.js"></script>
+</body>
+</html>
