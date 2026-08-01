@@ -37,8 +37,11 @@ export function animateAddToCart(btn) {
 }
 
 export function animateHomeGrid() {
-  const topRow = document.querySelectorAll('#grid-top .box');
-  const bottomRow = document.querySelectorAll('#grid-bottom .box');
+  const boxes = Array.from(document.querySelectorAll('.grid .box'));
+  if (!boxes.length) return;
+
+  const topRow = boxes.slice(0, 5);
+  const bottomRow = boxes.slice(5);
 
   if (topRow.length) {
     animate(topRow, {
@@ -54,9 +57,21 @@ export function animateHomeGrid() {
     animate(bottomRow, {
       translateX: ['-100%', '0%'],
       opacity: [0, 1],
-      delay: stagger(60, { from: 'center' }),
+      delay: stagger(60, { from: 'last' }),
       ease: 'outExpo',
       duration: 900,
     });
   }
+}
+
+const DRIFT_NAMES = ['driftA', 'driftB', 'driftC'];
+
+export function animateWatermark() {
+  const logos = document.querySelectorAll('.watermark .scatter');
+  logos.forEach((logo) => {
+    const duration = 6 + Math.random() * 8;
+    logo.style.animationName = DRIFT_NAMES[Math.floor(Math.random() * DRIFT_NAMES.length)];
+    logo.style.animationDuration = `${duration.toFixed(2)}s`;
+    logo.style.animationDelay = `-${(Math.random() * duration).toFixed(2)}s`;
+  });
 }
