@@ -11,6 +11,9 @@ importers:
       '@supabase/supabase-js':
         specifier: ^2.0.0
         version: 2.111.0
+      animejs:
+        specifier: ^4.5.0
+        version: 4.5.0
     devDependencies:
       vite:
         specifier: ^6.0.0
@@ -342,6 +345,17 @@ packages:
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
+  animejs@4.5.0:
+    resolution: {integrity: sha512-NQimYX+lz8WaXonGS9zVVoviCIAjONeJayxacUditaivYLqyXgGjFKjuyl0aUUhFKm5MriX9ty1TGovNzoJQWA==}
+    peerDependencies:
+      '@types/three': '>=0.150.0'
+      three: '>=0.150.0'
+    peerDependenciesMeta:
+      '@types/three':
+        optional: true
+      three:
+        optional: true
+
   esbuild@0.25.12:
     resolution: {integrity: sha512-bbPBYYrtZbkt6Os6FiTLCTFxvq4tt3JKall1vRwshA3fdVztsLAatFaZobhkBC8/BrPetoa0oksYoKXoG4ryJg==}
     engines: {node: '>=18'}
@@ -625,6 +639,8 @@ snapshots:
       '@supabase/storage-js': 2.111.0
 
   '@types/estree@1.0.9': {}
+
+  animejs@4.5.0: {}
 
   esbuild@0.25.12:
     optionalDependencies:

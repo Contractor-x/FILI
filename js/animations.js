@@ -1,41 +1,62 @@
-import anime from 'https://cdn.jsdelivr.net/npm/animejs@3/+esm';
+import { animate, stagger } from 'animejs';
 
 export function animateHero() {
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero-content');
   if (!hero) return;
-  anime({
-    targets: '.hero-content',
+  animate(hero, {
     translateY: [40, 0],
     opacity: [0, 1],
-    easing: 'easeOutQuad',
+    ease: 'outQuad',
     duration: 800,
   });
 }
 
 export function animateCards(selector) {
-  anime({
-    targets: selector,
+  animate(selector, {
     translateY: [30, 0],
     opacity: [0, 1],
-    delay: anime.stagger(80),
-    easing: 'easeOutQuad',
+    delay: stagger(80),
+    ease: 'outQuad',
     duration: 500,
   });
 }
 
 export function animateAddToCart(btn) {
-  anime({
-    targets: btn,
+  animate(btn, {
     scale: [1, 1.1, 1],
     duration: 300,
-    easing: 'easeInOutQuad',
+    ease: 'inOutQuad',
   });
 
   const badge = document.getElementById('cart-count');
-  anime({
-    targets: badge,
+  animate(badge, {
     scale: [1, 1.4, 1],
     duration: 400,
-    easing: 'easeInOutQuad',
+    ease: 'inOutQuad',
   });
+}
+
+export function animateHomeGrid() {
+  const topRow = document.querySelectorAll('#grid-top .box');
+  const bottomRow = document.querySelectorAll('#grid-bottom .box');
+
+  if (topRow.length) {
+    animate(topRow, {
+      translateX: ['100%', '0%'],
+      opacity: [0, 1],
+      delay: stagger(60),
+      ease: 'outExpo',
+      duration: 900,
+    });
+  }
+
+  if (bottomRow.length) {
+    animate(bottomRow, {
+      translateX: ['-100%', '0%'],
+      opacity: [0, 1],
+      delay: stagger(60, { from: 'center' }),
+      ease: 'outExpo',
+      duration: 900,
+    });
+  }
 }
