@@ -1,9 +1,11 @@
 import { getProductsByCategorySlug } from '../api/products.js';
 import { getCartCount } from '../api/cart.js';
+import { renderNavAuthState } from '../components/navAuthState.js';
 import { renderProductCard } from './shared/productCard.js';
 import { animateCards } from '../animations.js';
 
 document.getElementById('cart-count').textContent = getCartCount();
+renderNavAuthState();
 
 const params = new URLSearchParams(window.location.search);
 const slug = params.get('slug');
