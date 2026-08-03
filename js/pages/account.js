@@ -1,4 +1,5 @@
 import { requireAuth } from '../guards/requireAuth.js';
+import '../components/customCursor.js';
 import { getCurrentUserWithRole } from '../api/auth.js';
 import { renderNavAuthState } from '../components/navAuthState.js';
 
