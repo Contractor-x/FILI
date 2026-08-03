@@ -1,4 +1,5 @@
-import { getProductBySlug } from '../api/products.js';
+import '../components/customCursor.js';
+import { getProductBySlug, subscribeToProductChanges } from '../api/products.js';
 import { addToCart, getCartCount } from '../api/cart.js';
 import { renderNavAuthState } from '../components/navAuthState.js';
 import { animateAddToCart } from '../animations.js';
@@ -126,3 +127,7 @@ async function renderProduct() {
 }
 
 renderProduct();
+subscribeToProductChanges(
+  () => renderProduct(),
+  ['products', 'variants', 'product_images']
+);
