@@ -1,4 +1,5 @@
 import { getCart, updateQuantity, removeFromCart, getCartCount } from '../api/cart.js';
+import '../components/customCursor.js';
 import { renderNavAuthState } from '../components/navAuthState.js';
 
 document.getElementById('cart-count').textContent = getCartCount();
