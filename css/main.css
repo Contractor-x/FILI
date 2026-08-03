@@ -486,6 +486,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 0.5rem;
 }
 
+/* ─── Custom cursor ─── */
+body.custom-cursor,
+body.custom-cursor * {
+  cursor: url('../assets/images/fili-cursor.png') 16 16, auto;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .navbar { padding: 1rem; }

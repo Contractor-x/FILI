@@ -1,3 +1,4 @@
+import '../components/customCursor.js';
 import { signUp } from '../api/auth.js';
 
 document.querySelector('#signup-form').addEventListener('submit', async (e) => {

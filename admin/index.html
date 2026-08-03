@@ -3,19 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FILI – Admin</title>
+  <title>FILI – Admin Dashboard</title>
   <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
 </head>
 <body>
 
   <nav class="navbar">
     <a href="../index.html" class="logo">FILI Admin</a>
-    <div id="nav-auth-slot"></div>
+    <div class="nav-right">
+      <nav class="admin-nav">
+        <a href="index.html" class="active">Products</a>
+        <a href="categories.html">Categories</a>
+      </nav>
+      <div id="nav-auth-slot"></div>
+    </div>
   </nav>
 
   <section class="section">
-    <h2>Admin Dashboard</h2>
-    <p>Admin panel coming in Phase 4.</p>
+    <div class="admin-toolbar">
+      <h2>Products</h2>
+      <div class="admin-toolbar-actions">
+        <input type="search" id="search-input" class="search-input" placeholder="Search products…" />
+        <a href="product-edit.html" class="btn">+ Add Product</a>
+      </div>
+    </div>
+
+    <div class="admin-table-wrap">
+      <table class="admin-table" id="products-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Active</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </section>
 
   <script type="module" src="../js/pages/admin-dashboard.js"></script>

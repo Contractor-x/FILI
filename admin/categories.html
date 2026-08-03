@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FILI – Categories</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">FILI Admin</a>
+    <div class="nav-right">
+      <nav class="admin-nav">
+        <a href="index.html">Products</a>
+        <a href="categories.html" class="active">Categories</a>
+      </nav>
+      <div id="nav-auth-slot"></div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="admin-toolbar">
+      <h2>Categories</h2>
+      <a href="index.html" class="btn btn-outline btn-sm">&larr; Back to products</a>
+    </div>
+
+    <p class="form-error" id="error-message"></p>
+
+    <div class="categories-layout">
+      <div class="category-card">
+        <h3 id="add-title">Add Category</h3>
+        <form id="category-form" class="admin-form" novalidate>
+          <div class="form-group">
+            <label for="cat-name">Name *</label>
+            <input type="text" id="cat-name" required />
+          </div>
+          <div class="form-group">
+            <label for="cat-slug">Slug</label>
+            <input type="text" id="cat-slug" />
+          </div>
+          <div class="form-group full-span">
+            <button type="submit" class="btn" id="save-cat-btn">Add Category</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="categories-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Slug</th>
+              <th>Products</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="../js/pages/admin-categories.js"></script>
+</body>
+</html>
