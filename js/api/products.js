@@ -5,6 +5,7 @@ export async function getFeaturedProducts(limit = 8) {
     .from('products')
     .select('id, name, slug, price, compare_at_price, image_url')
     .eq('is_active', true)
+    .order('sort_order', { ascending: true })
     .order('created_at', { ascending: false })
     .limit(limit);
   if (error) throw error;
@@ -40,6 +41,7 @@ export async function getAllProductsAdmin() {
   const { data, error } = await supabase
     .from('products')
     .select('id, name, price, stock, is_active, image_url, categories(name)')
+    .order('sort_order', { ascending: true })
     .order('created_at', { ascending: false });
   if (error) throw error;
   return data;
