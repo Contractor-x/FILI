@@ -1,4 +1,5 @@
-import { getProductsByCategorySlug } from '../api/products.js';
+import '../components/customCursor.js';
+import { getProductsByCategorySlug, subscribeToProductChanges } from '../api/products.js';
 import { getCartCount } from '../api/cart.js';
 import { renderNavAuthState } from '../components/navAuthState.js';
 import { renderProductCard } from './shared/productCard.js';
@@ -35,3 +36,4 @@ async function renderCategory() {
 }
 
 renderCategory();
+subscribeToProductChanges(() => renderCategory(), ['products', 'categories']);
