@@ -6,6 +6,7 @@
 -- Creates the 10 products with name/price filled in but image_url empty, so
 -- the admin list shows the 10 labelled products and you set the image + price
 -- for each one from admin > Edit. It also deactivates the 4 placeholders.
+-- If the products already exist, just run 005_product_sort_order.sql instead.
 
 update products
 set is_active = false
