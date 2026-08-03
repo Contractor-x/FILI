@@ -15,6 +15,8 @@ export default defineConfig({
         signup: resolve(__dirname, 'signup.html'),
         account: resolve(__dirname, 'account.html'),
         admin: resolve(__dirname, 'admin/index.html'),
+        adminProductEdit: resolve(__dirname, 'admin/product-edit.html'),
+        adminCategories: resolve(__dirname, 'admin/categories.html'),
       },
     },
   },
