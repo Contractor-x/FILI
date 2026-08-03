@@ -1,7 +1,7 @@
 import { getCartCount } from '../api/cart.js';
 import '../components/customCursor.js';
 import { getFeaturedProducts, subscribeToProductChanges } from '../api/products.js';
-import { isLocalPreview, localProducts } from '../api/localCatalog.js';
+import { localProducts } from '../api/localCatalog.js';
 import { renderNavAuthState } from '../components/navAuthState.js';
 import { animateHomeGrid, animateWatermark } from '../animations.js';
 
@@ -53,10 +53,6 @@ async function refresh() {
 }
 
 async function init() {
-  if (isLocalPreview) {
-    renderProducts(localProducts, true);
-    return;
-  }
   renderProducts(await load(), true);
   subscribeToProductChanges(() => refresh());
 }
