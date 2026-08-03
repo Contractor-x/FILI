@@ -35,3 +35,56 @@ export async function getProductBySlug(slug) {
   if (error) throw error;
   return data;
 }
+
+export async function getAllProductsAdmin() {
+  const { data, error } = await supabase
+    .from('products')
+    .select('id, name, price, stock, is_active, image_url, categories(name)')
+    .order('created_at', { ascending: false });
+  if (error) throw error;
+  return data;
+}
+
+export async function getProductForEdit(id) {
+  const { data, error } = await supabase
+    .from('products')
+    .select('*, variants(*), product_images(*)')
+    .eq('id', id)
+    .single();
+  if (error) throw error;
+  return data;
+}
+
+export async function createProduct(product) {
+  const { data, error } = await supabase
+    .from('products')
+    .insert(product)
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}
+
+export async function updateProduct(id, product) {
+  const { error } = await supabase
+    .from('products')
+    .update(product)
+    .eq('id', id);
+  if (error) throw error;
+}
+
+export async function toggleProductActive(id, isActive) {
+  const { error } = await supabase
+    .from('products')
+    .update({ is_active: isActive })
+    .eq('id', id);
+  if (error) throw error;
+}
+
+export async function deleteProduct(id) {
+  const { error } = await supabase
+    .from('products')
+    .update({ is_active: false })
+    .eq('id', id);
+  if (error) throw error;
+}
