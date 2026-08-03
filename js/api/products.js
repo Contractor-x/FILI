@@ -88,3 +88,16 @@ export async function deleteProduct(id) {
     .eq('id', id);
   if (error) throw error;
 }
+
+export function subscribeToProductChanges(callback, tables = ['products']) {
+  const channel = supabase.channel(`storefront-${tables.join('-')}`);
+  tables.forEach((table) => {
+    channel.on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table },
+      (payload) => callback(payload, table)
+    );
+  });
+  channel.subscribe();
+  return channel;
+}
