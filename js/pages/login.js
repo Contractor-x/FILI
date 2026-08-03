@@ -1,3 +1,4 @@
+import '../components/customCursor.js';
 import { signIn, signInWithGoogle, getCurrentUserWithRole } from '../api/auth.js';
 
 document.querySelector('#login-form').addEventListener('submit', async (e) => {
