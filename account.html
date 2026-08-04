@@ -15,13 +15,55 @@
 
   <section class="section account-page">
     <h2>My Account</h2>
-    <div id="account-info">
-      <p>Loading...</p>
-    </div>
-    <div class="account-placeholder">
-      <h3>Order History</h3>
-      <p>Your orders will appear here soon.</p>
-    </div>
+
+    <form id="profile-form" class="auth-form">
+      <label for="email-display">Email</label>
+      <p id="email-display" class="account-email">…</p>
+
+      <label for="full_name">Full name</label>
+      <input type="text" id="full_name" autocomplete="name" />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" autocomplete="tel" />
+
+      <label for="address_line1">Address line 1</label>
+      <input type="text" id="address_line1" autocomplete="address-line1" />
+
+      <label for="address_line2">Address line 2</label>
+      <input type="text" id="address_line2" autocomplete="address-line2" />
+
+      <div class="form-row">
+        <div>
+          <label for="city">City</label>
+          <input type="text" id="city" autocomplete="address-level2" />
+        </div>
+        <div>
+          <label for="state">State</label>
+          <input type="text" id="state" autocomplete="address-level1" />
+        </div>
+      </div>
+
+      <label for="country">Country</label>
+      <input type="text" id="country" autocomplete="country-name" />
+
+      <button type="submit" id="save-btn" class="auth-btn">Save changes</button>
+    </form>
+
+    <form id="password-form" class="auth-form">
+      <h2>Change Password</h2>
+      <label for="new_password">New password</label>
+      <input type="password" id="new_password" autocomplete="new-password" />
+      <label for="confirm_password">Confirm password</label>
+      <input type="password" id="confirm_password" autocomplete="new-password" />
+      <button type="submit" class="auth-btn">Change password</button>
+    </form>
+
+    <section id="order-history" class="account-placeholder">
+      <h2>Order History</h2>
+      <div id="orders-list">
+        <p>You haven't placed any orders yet.</p>
+      </div>
+    </section>
   </section>
 
   <script type="module" src="js/pages/account.js"></script>
