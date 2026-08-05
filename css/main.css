@@ -9,6 +9,8 @@ body {
   background: #000;
   color: #fff;
   overflow-x: hidden;
+  min-height: 100vh;
+  padding-bottom: 2rem;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -528,9 +530,14 @@ a { color: inherit; text-decoration: none; }
 .toast-error { background: #dc2626; }
 
 /* ─── Custom cursor ─── */
-body.custom-cursor,
-body.custom-cursor * {
+html.custom-cursor,
+html.custom-cursor * {
   cursor: url('../assets/images/fili-cursor.png') 16 16, auto;
+}
+
+html,
+html * {
+  cursor: url('../assets/images/fili-cursor.png') 16 16, auto !important;
 }
 
 /* ─── Responsive ─── */
